@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}
+  GraphAlgoriThmVisU - Contact
+{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+
+{% block contactactive %}
+  active
+{% endblock %}
+
+{% block body %}
+  {% load static %}
+  <div class="container" style="margin-top:85px;">
+    <div class="row">
+      <div class="col-md-4 p-3" style="background-image: linear-gradient(to top right, rgb(75 40 216), rgb(4, 41, 1));
+      color: #fff; text-white">
+        <div class="row p-3 text-light">
+            <h4 class="text-light"><b>We are here to help you!</b></h4>
+            <p class="my-1">
+              If you have any questions, feedback, or suggestions, feel free to reach out to us. We value your input and are committed to improving your experience with our visualizer.</p>
+           <hr>
+            <div class="col-md-12 my-2">
+                <h5 class="text-truncate">Email:</h5>
+                <p>graphalgoteam@gmail.com | connectwithus@gmail.com</p>
+            </div>
+            <div class="col-md-12 my-2">
+                <h5 class="text-light">Phone:</h5>
+                <p>+91 7777345890 | +91 7777345892</p>
+              
+            </div>
+            <div class="col-md-12 my-2">
+                <h5 class="text-light">Address:</h5>
+                <p>#212, Nashik-Malegoan highway, Ground Floor 7th cross same layout, Neminagar building plaza, EION Limited, Chandwad, Pin Code - 423101.</p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-8" style="margin: inherit;">
+        <div class="card shadow">
+          <img src="{% static 'main_img/verifybg.jpg' %}" class="card-img-top" alt="..." />
+          <div class="card-img-overlay">
+            <h2 class="card-title text-light text-center">Connect with Us</h2>
+            <p class="card-text text-light text-center">We would love to respond your queries and help you succeed. Feel free to got in touch with us!!!</p>
+          </div>
+          <div class="card-body">
+            <form action="" method="post">
+              {% csrf_token %}
+              <h5 class="text-danger"><strong>Send your request</strong></h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label">Provide your Name</label>
+                  <input type="text" class="form-control" name="name" placeholder="Enter your name" required />
+                  <div class="my-1 text-danger" id="error-msg"></div>
+                </div>
+                <div class="col-md-6 mt-1">
+                  <label class="form-label">Email Id</label>
+                  <input type="text" class="form-control" name="email" placeholder="Enter your email" required />
+                </div>
+                <div class="col-md-12 mt-1">
+                  <label class="form-label">Phone Number</label>
+                  <input type="number" class="form-control" name="phone" placeholder="Enter your Phone Number" required />
+                </div>
+                <div class="col-md-12 mt-1">
+                  <label class="form-label">Provide your Issue/Message</label>
+                  <textarea class="form-control" name="content" id="content" cols="30" rows="3" placeholder="Describe your Issue/Message" required></textarea>
+                </div>
+                <div class="col-md-12 my-3">
+                  <input type="submit" class="btn text-light w-25 mx-auto d-block" id="btn" value="Send" style="background-image: linear-gradient(to top right, rgb(75 40 216), rgb(4, 41, 1));
+                  color: #fff; text-white" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

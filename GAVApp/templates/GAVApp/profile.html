@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %} GraphAlgoriThmVisU/Profile {% endblock title %}
+
+
+{% block css %}
+.footer{
+margin-top:78px;
+}
+{% endblock css %}
+
+
+{% block body %}
+{% load static %}
+<div class="container" style="margin-top:85px;">
+    <div class="wrapper">
+        <h1 class="text-danger" style="text-align:center;"><strong>My Profile</strong></h1>
+        <div style='text-align:center;'>
+            <img src='{% static "GAVApp/img/av1.jpg" %}'
+                style='width:205px;'>
+        </div>"
+        <div class="head-title" style="margin-top: -20px;">
+
+            <h3 style="text-align:center;margin-top:2px;"><strong>Welcome,</strong></h3>
+            <h4 style="text-align:center;">{{user.first_name}} {{user.last_name}}</h4>
+        </div>
+
+        <div class="tb mt-3">
+            <table class="table table-bordered border-secondary w-50 mx-auto">
+
+                <tr>
+                    <td><b>Username </b></td>
+                    <td>{{user.username}}</td>
+                </tr>
+
+
+                <tr>
+
+                    <td><b>First Name</b></td>
+                    <td>{{user.first_name}}</td>
+
+                </tr>
+                <tr>
+
+                    <td><b>Last Name</b></td>
+                    <td>{{user.last_name}}</td>
+
+                </tr>
+                <tr>
+
+                    <td><b>Email</b></td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </table>
+        </div>
+
+
+  
+        <!-- Button trigger modal -->
+        <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#editmodal"
+        style="background-image: linear-gradient(to top right, rgb(53 204 6), rgb(4, 41, 1)); color: #fff; margin-left: 67.3%;">
+            Edit profile
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width:558;">
+                    <div class="modal-header" style="background-color:#0C4B33;">
+                        <h5 class="modal-title text-light" id="exampleModalLabel">Update Your Profile</h5>
+                        <button type="button" class="btn-close btn-light" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div style="height:10px;background-color:#44B78B;">
+                    </div>
+                    <div class="modal-body bg-light">
+                        <form action="/edit_profile" method='post'>{% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control border-secondary" id="username" name="username"
+                                    value="{{user.username}}" placeholder="Choose a unique username" required>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control border-secondary" id="fname" name="fname"
+                                    value="{{user.first_name}}" placeholder="Enter Your First Name" required>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control border-secondary" id="lname" name="lname"
+                                    value="{{user.last_name}}" placeholder="Enter Your Last Name" required>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control border-secondary" id="email" name="email"
+                                    value="{{user.email}}" placeholder="name@example.com" required>
+                            </div>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <button type="submit" class="btn text-light" style="background-color:#0C4B33;">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

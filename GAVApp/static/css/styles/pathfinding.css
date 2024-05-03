@@ -1,0 +1,161 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.board {
+  width: 40vw;
+  height: 40vw;
+  background-color: #ffffff;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  overflow: hidden;
+}
+
+.unit {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 0.1px outset #84abff;
+}
+.unit:hover {
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+.restore {
+  background: #ffffff;
+}
+
+.target {
+  background: #262626;
+}
+
+.wall {
+  background: #016efd;
+}
+
+.screen {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animate {
+  animation: appear 1s;
+  background-color: #f4fd9e;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+  30% {
+    opacity: 0.75;
+    background-color: #ffeb35;
+  }
+  100% {
+    opacity: 1;
+    background-color: #00ff95;
+    transform: scale(1);
+    border-radius: 0px;
+  }
+}
+.path {
+  background: #ff9393;
+}
+
+.control {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 25px;
+  background: #e0e0e0;
+}
+
+
+
+.screen {
+  width: 38vw;
+  height: 38vw;
+  border-radius: 10px;
+}
+
+
+.card:hover {
+  box-shadow: 5px 5px 20px #3b3b3b;
+  opacity: 1;
+  transition: 300ms;
+}
+
+.fa:hover {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .board, .control {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .screen {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .control {
+    border-radius: 0px;
+    background: none;
+    box-shadow: none;
+  }
+  @media screen and (max-width: 340px) {
+    .card-grp {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-grp {
+    margin-top: 30px;
+  }
+  .icon {
+    margin-top: 100px;
+  }
+}
+.path.right {
+  /* Animation styles for right movement */
+  transform: translateX(20px); /* Adjust as needed */
+  transition: transform 0.2s ease-in-out; /* Adjust as needed */
+}
+
+.path.left {
+  /* Animation styles for left movement */
+  transform: translateX(-20px); /* Adjust as needed */
+  transition: transform 0.2s ease-in-out; /* Adjust as needed */
+}
+
+.path.down {
+  /* Animation styles for down movement */
+  transform: translateY(20px); /* Adjust as needed */
+  transition: transform 0.2s ease-in-out; /* Adjust as needed */
+}
+
+.path.up {
+  /* Animation styles for up movement */
+  transform: translateY(-20px); /* Adjust as needed */
+  transition: transform 0.2s ease-in-out; /* Adjust as needed */
+}
+
+/* Diagonal movement styles */
+.path.diag-down-right {
+  transform: translateX(20px) translateY(20px); /* Adjust as needed */
+  transition: transform 0.2s ease-in-out; /* Adjust as needed */
+}
+
+/* Add similar styles for other diagonal directions */

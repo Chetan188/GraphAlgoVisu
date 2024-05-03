@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}GraphAlgoriThmVisU - About{% endblock title %}
+{% load static %}
+<link rel="stylesheet" href="{%  static 'css/about.css' %}">
+
+{% block aboutactive %} active {% endblock aboutactive %}
+
+{% block body %}
+{% load static %}
+<div class="container" style="margin-top:85px;">
+        <div class="row featurette" style="margin-top:4rem;">
+            <div class="col-md-7">
+                {% load static %}
+                <h2 class="featurette-heading"><strong><img src="{% static 'main_img/aboutSmile.png' %}" width="40px">About Us</strong></h2>
+                <p class="lead">Our team is the creator of this website. We are contributed our
+                    ideas with lots of project in Django. We are done various projects on various technologies. We are
+                    passionate to learn and implement new things quickly. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid unde iure amet natus explicabo modi ipsum. Ipsa tempore nihil itaque atque asperiores amet quos quam et. Animi, harum provident fugit sequi perferendis nobis iusto, saepe doloremque totam porro quas reiciendis molestiae fuga illo est odio. Ducimus veritatis officia et harum!</p>
+            </div>
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                    src="https://source.unsplash.com/1600x900/?code, laptop" alt="">
+            </div>
+        </div>
+
+        <div class="row featurette" style="margin-top:6.5rem;margin-left:0.5rem;">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading"><strong>About Graph Algorithm Visualizer</strong></h2>
+                <p class="lead">This website is a very simple, clickable and easy to understand. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis rem laboriosam unde repellat incidunt, voluptatem maxime quia similique. Molestias placeat vero officiis amet. Suscipit consequatur inventore, ipsam soluta quas dolorum quibusdam dignissimos sequi rem veniam architecto libero accusamus nisi aspernatur consequuntur harum. Neque distinctio fuga corporis repudiandae ab ad. </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                    src="https://source.unsplash.com/1600x900/?graph, algorithm" alt="">
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+{% endblock body %}

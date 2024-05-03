@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+
+{% block title %}
+  GraphAlgoriThmVisU - Documentation
+{% endblock %}
+{% load static %}
+
+{% block documentationactive %}
+  active
+{% endblock %}
+
+{% block body %}
+  {% load static %}
+
+  <div class="container" style="margin-top: 85px;">
+    <h4 class="text-center text-danger mb-4"><strong>Explore the Courses, Keep your knowledgeble with good content!</strong></h4>
+    <div class="row">
+      {% for item in myposts %}
+        <div class="col-md-4">
+          <div class="card my-2" style="width: 24rem;">
+            <div class="ratio ratio-21x9">
+                {% video item.videoUrl %}
+              </div>
+            <div class="card-body">
+                <h3 class="mb-0">{{item.title}}</h3>
+                <div class="mb-1 text-muted">{{item.pub_date}}</div>
+                <p class="card-text mb-auto">{{item.head0}}.......</p>
+                <a href="docpostfe/{{item.docpost_id}}" class="stretched-link mt-auto">Continue reading</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

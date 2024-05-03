@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}
+  GraphAlgoriThmVisU - Home/info
+{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% block homeactive %}
+  active
+{% endblock %}
+
+{% block css %}
+  .cardbg { background-image: linear-gradient(to top right, rgb(253 9 250), rgb(4, 41, 1)); color: #fff; }
+{% endblock %}
+{% block body %}
+  <div class="container" style="margin-top: 85px;">
+    <h2 class="my-4 text-center text-danger"><strong>Explore more about the Graph Algorithm Visualizer</strong></h2>
+    <p class="text-center"><strong>Get in touch, Explore the content!</strong></p>
+    <hr />
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">Inspiration</h5>
+      <div class="card-body">
+        <p class="card-text">Graph algorithms can be challenging to understand for the average CS student. visualizing it on the whiteboard often hurts more than it helps, and the specific example videos on youtube sometimes aren't enough. The goal of this project will to create an all-in-one website that a student as well as teachers can access to reference algorithms they are confused about.</p>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">What it does</h5>
+      <div class="card-body">
+        <p class="card-text">
+          The web app we created allows the user to create a graph of their choosing. Once they have done so, they can toggle over to the algorithms tab to simulate an algorithmon their graph, or gain information about their graph. Currently the following are available to the users:<br />
+          # An iterative simulation of DFS, BFS. <br />
+          # A list of the cut vertices of the graph. <br />
+          # A minimum spanning tree of the graph(found with krushkal's algorithm)
+        </p>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">How we built it</h5>
+      <div class="card-body">
+        <p class="card-text">Basically, we used pure Vanilla Javascript, Python Django Framework to set the functional or backend environment, which reduces the lot of the clutter that bigger projects normally come with. The UI/UX designed are done through the Bootstrap Framework. The graph itself simulated through a visualization libraries called cytoscape.</p>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">Challenges we ran into</h5>
+      <div class="card-body">
+        <p class="card-text">We tried to code things out as quickly as possible. This turned out to be an issue, however, since our code quickly become cluttered and difficult to read. States were beginning to interweave between components, and connecting UI to actual graph fucntions was proving to be a difficult task. It was also difficult to figuring out how to extract the data from the cytoscape graph, since we were not used to the library.</p>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">What we learned</h5>
+      <div class="card-body">
+        <p class="card-text">In this project, we learned how to create a semi-stable, professional-ish Django project than can somewhat maintain itself. Mostly the javascript and django libraries took care of many trivial errors we would have to deal with, and the unified code style made it really easy for all of us to understand each other's code. We also gained a deeper understanding of how django featues/libraries works through this.</p>
+      </div>
+    </div>
+    <div class="card mb-3 shadow-md my-4">
+      <h5 class="card-header text-white cardbg">What's next for Graph Algorithm Visualizer</h5>
+      <div class="card-body">
+        <p class="card-text">Adding more algorithms in an iterative version is the next logical step for us, since we wanted to focus on showing how graph algorithms operate. Aside from that, exploring better UX for creating graphs would be a really nice improvement.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+ModelName: Document
+mainTopic -
+videoUrl -
+head1 -
+chead1 - 
+para1 -
+images -
+head2 -
+chead2 - 
+para2 -
+head3 -
+chead3 - 
+para3 -
+head4 -
+chead4 - 
+para4 -
+code1 -
+code2 -
+code3 -
+code4 -
+created_at -
+
+
